@@ -129,22 +129,23 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
 .video-link:hover{transform:translateY(-1px);box-shadow:0 11px 22px rgba(113,100,216,.30);filter:saturate(1.08)}
 .video-link:focus-visible{outline:3px solid rgba(113,100,216,.32);outline-offset:3px}
 .job .job-desc:last-of-type{margin-bottom:18px}
-.advisor{overflow:hidden;position:relative}
+.advisor{display:block;min-height:0;height:auto;overflow:hidden;position:relative}
 .advisor:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;opacity:.5;pointer-events:none}
 .advisor-fit:before{left:-110px;top:-130px;background:var(--soft-teal)}
 .advisor-ng:before{right:-110px;top:-130px;background:#eef6ff}
-.advisor-head{display:grid;grid-template-columns:clamp(120px,16vw,160px) minmax(0,1fr);align-items:center;gap:18px;margin:-8px 0 22px;position:relative;z-index:1}
-.advisor-character{width:100%;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 12px 16px rgba(31,44,78,.12))}
-.advisor-bubble{padding:20px 22px;border:1px solid;position:relative;border-radius:20px}
+.advisor-flow{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:100%;min-height:0;height:auto;position:relative;z-index:1}
+.advisor-head{display:flex;align-items:center;min-height:112px;height:auto;margin:0 0 16px;padding-left:128px;position:relative}
+.advisor-character{position:absolute;left:0;top:50%;width:112px;height:112px;transform:translateY(-50%);object-fit:contain;filter:drop-shadow(0 12px 16px rgba(31,44,78,.12))}
+.advisor-bubble{width:100%;padding:20px 22px;border:1px solid;position:relative;border-radius:20px}
 .advisor-fit .advisor-bubble{background:#eefaf6;border-color:#ccece1}
-.advisor-ng .advisor-head{grid-template-columns:minmax(0,1fr) clamp(120px,16vw,160px)}
-.advisor-ng .advisor-character{grid-column:2;grid-row:1}
-.advisor-ng .advisor-bubble{grid-column:1;grid-row:1;background:#f1f7ff;border-color:#d8e7f7}
+.advisor-ng .advisor-head{padding-right:128px;padding-left:0}
+.advisor-ng .advisor-character{right:0;left:auto}
+.advisor-ng .advisor-bubble{background:#f1f7ff;border-color:#d8e7f7}
 .advisor-bubble:before{content:"";position:absolute;left:-10px;top:50%;width:18px;height:18px;transform:translateY(-50%) rotate(45deg);background:inherit;border-left:1px solid;border-bottom:1px solid;border-color:inherit}
 .advisor-ng .advisor-bubble:before{left:auto;right:-10px;border-left:0;border-bottom:0;border-right:1px solid;border-top:1px solid;border-color:inherit}
 .advisor-bubble h2{margin-bottom:5px}
 .advisor-bubble .h-note{margin:0}
-.advisor .job-grid,.advisor .reason,.advisor .caution{position:relative;z-index:1}
+.advisor .job-grid,.advisor .reason,.advisor .caution{flex:0 0 auto;position:relative;z-index:1}
 .reason,.caution{margin-top:16px;padding:18px;border-radius:16px;color:#4d5870;font-size:13px}
 .reason{background:#f2f4fb}
 .caution{background:#fff1ed}
@@ -189,8 +190,10 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
   .sec{padding:25px 18px;border-radius:22px}
   .sec h2{font-size:19px}
   .job-grid{grid-template-columns:1fr}
-  .advisor-head{grid-template-columns:86px minmax(0,1fr);gap:10px;margin:-2px 0 18px}
-  .advisor-ng .advisor-head{grid-template-columns:minmax(0,1fr) 86px}
+  .advisor{padding-top:18px}
+  .advisor-head{min-height:68px;margin:0 0 12px;padding-left:77px}
+  .advisor-character{width:68px;height:68px}
+  .advisor-ng .advisor-head{padding-right:77px;padding-left:0}
   .advisor-bubble{padding:15px 14px;border-radius:16px}
   .advisor-bubble h2{font-size:17px;line-height:1.4}
   .advisor-bubble .h-note{font-size:10px;line-height:1.6}
@@ -789,23 +792,27 @@ function showResult(){
     '</div>' +
 
     '<div class="sec advisor advisor-fit">' +
-      '<div class="advisor-head">' +
-        '<img class="advisor-character" src="images/yuipapa.png" alt="おすすめの副業を案内するゆいパパ" width="1254" height="1254" loading="lazy">' +
-        '<div class="advisor-bubble"><h2>あなたに向いている副業</h2>' +
-          '<p class="h-note">相性の良い順に3つ。まずはこの中から1つだけ選んで始めるのが、いちばん失敗しません。</p>' +
+      '<div class="advisor-flow">' +
+        '<div class="advisor-head">' +
+          '<img class="advisor-character" src="images/yuipapa.png" alt="おすすめの副業を案内するゆいパパ">' +
+          '<div class="advisor-bubble"><h2>あなたに向いている副業</h2>' +
+            '<p class="h-note">相性の良い順に3つ。<br>まずはこの中から1つだけ選んで始めるのが、いちばん成功への近道です！</p>' +
+          '</div>' +
         '</div>' +
+        '<div class="job-grid">' + fit.map(function(j){ return jobHTML(j, false); }).join("") + '</div>' + fitReason +
       '</div>' +
-      '<div class="job-grid">' + fit.map(function(j){ return jobHTML(j, false); }).join("") + '</div>' + fitReason +
     '</div>' +
 
     '<div class="sec advisor advisor-ng">' +
-      '<div class="advisor-head">' +
-        '<img class="advisor-character" src="images/yuimama.png" alt="注意点を案内するゆいママ" width="1254" height="1254" loading="lazy">' +
-        '<div class="advisor-bubble"><h2>現時点では向きにくい副業</h2>' +
-          '<p class="h-note">相性が出にくい順に3つ。挑戦するなら、下の注意点を必ず読んでからにしてください。</p>' +
+      '<div class="advisor-flow">' +
+        '<div class="advisor-head">' +
+          '<img class="advisor-character" src="images/yuimama.png" alt="注意点を案内するゆいママ">' +
+          '<div class="advisor-bubble"><h2>現時点では向きにくい副業</h2>' +
+            '<p class="h-note">相性が出にくい順に3つ。<br>挑戦するなら、下の注意点を読んでからにしてくださいね。</p>' +
+          '</div>' +
         '</div>' +
+        '<div class="job-grid">' + unfit.map(function(j){ return jobHTML(j, true); }).join("") + '</div>' + ngReason +
       '</div>' +
-      '<div class="job-grid">' + unfit.map(function(j){ return jobHTML(j, true); }).join("") + '</div>' + ngReason +
     '</div>' +
 
     '<div class="sec"><h2>始める前に知っておきたいこと</h2>' +
@@ -828,7 +835,7 @@ function showResult(){
       '</div>' +
     '</div>' +
 
-    '<div class="retry"><button class="btn sub" onclick="restart()">👉 もう一度診断する</button></div>' +
+    '<div class="retry"><button class="btn sub" onclick="restart()">もう一度診断する</button></div>' +
 
     '<div class="disc">' +
       '※ この診断は、副業選択のための自己理解を補助する参考情報です。医学的・心理学的検査ではなく、収益や適職を保証しません。最終的な判断・行動はご自身の責任でお願いいたします。<br>' +
