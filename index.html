@@ -53,14 +53,9 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
 .btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(38,57,107,.30)}
 .btn.sub{background:#fff;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
 .note{max-width:580px;margin-top:18px;color:#7b8498;font-size:11px;line-height:1.8}
-.hero-art{grid-area:art;min-height:480px;position:relative;z-index:1}
-.hero-orbit{position:absolute;inset:50px 10px 20px;border-radius:50%;background:linear-gradient(145deg,var(--soft-violet),var(--soft-teal));border:1px solid rgba(113,100,216,.12)}
-.hero-type{position:absolute;width:52%;filter:drop-shadow(0 18px 20px rgba(31,44,78,.12))}
-.hero-type.fblp{left:-3%;top:9%;transform:rotate(-5deg)}
-.hero-type.fbad{right:-4%;top:3%;transform:rotate(5deg)}
-.hero-type.sblp{left:2%;bottom:-3%;transform:rotate(3deg)}
-.hero-type.sead{right:-7%;bottom:-4%;transform:rotate(-4deg)}
-.hero-stamp{position:absolute;z-index:3;left:50%;top:49%;transform:translate(-50%,-50%) rotate(-4deg);padding:13px 17px;border-radius:16px;background:var(--navy);color:#fff;font-size:13px;font-weight:900;box-shadow:var(--shadow-sm);white-space:nowrap}
+.hero-art{grid-area:art;width:100%;aspect-ratio:3/2;align-self:center;position:relative;z-index:1}
+.hero-image{width:100%;height:100%;border-radius:26px;object-fit:contain;object-position:center;filter:drop-shadow(0 16px 22px rgba(31,44,78,.10))}
+.hero-stamp{position:absolute;z-index:3;left:50%;bottom:-7px;transform:translateX(-50%) rotate(-2deg);padding:11px 15px;border-radius:14px;background:var(--navy);color:#fff;font-size:12px;font-weight:900;box-shadow:var(--shadow-sm);white-space:nowrap}
 
 /* quiz */
 #quiz{max-width:880px;margin:auto}
@@ -134,8 +129,8 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
 .advisor-fit:before{left:-110px;top:-130px;background:var(--soft-teal)}
 .advisor-ng:before{right:-110px;top:-130px;background:#eef6ff}
 .advisor-flow{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:100%;min-height:0;height:auto;position:relative;z-index:1}
-.advisor-head{display:flex;align-items:center;min-height:112px;height:auto;margin:0 0 16px;padding-left:128px;position:relative}
-.advisor-character{position:absolute;left:0;top:50%;width:112px;height:112px;transform:translateY(-50%);object-fit:contain;filter:drop-shadow(0 12px 16px rgba(31,44,78,.12))}
+.advisor-head{display:flex;align-items:center;min-height:124px;height:auto;margin:0 0 16px;padding-left:128px;position:relative}
+.advisor-character{position:absolute;left:0;top:50%;width:112px;height:auto;max-height:124px;transform:translateY(-50%);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 12px 16px rgba(31,44,78,.12))}
 .advisor-bubble{width:100%;padding:20px 22px;border:1px solid;position:relative;border-radius:20px}
 .advisor-fit .advisor-bubble{background:#eefaf6;border-color:#ccece1}
 .advisor-ng .advisor-head{padding-right:128px;padding-left:0}
@@ -157,7 +152,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
 /* responsive */
 @media(max-width:840px){
   .hero{grid-template-columns:1fr;grid-template-areas:"copy" "art" "action";min-height:0;padding:46px 34px}
-  .hero-art{min-height:390px;max-width:560px;width:100%;margin:auto}
+  .hero-art{max-width:560px;margin:auto}
   .job-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .rcard{grid-template-columns:1fr;padding:34px}
   .rkicker,.rname,.rcode,.rcatch,.rdesc,.axes,.border-result,.figure{grid-column:1}
@@ -171,9 +166,9 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
   .hero .lead{margin-bottom:10px;font-size:13px;line-height:1.58}
   .badges{margin-bottom:0}
   .badge{padding:6px 11px;font-size:11px}
-  .hero-art{min-height:195px}
-  .hero-orbit{inset:12px 20px 4px}
-  .hero-stamp{padding:8px 10px;font-size:9px}
+  .hero-art{aspect-ratio:3/2}
+  .hero-image{border-radius:18px}
+  .hero-stamp{bottom:-5px;padding:7px 10px;border-radius:10px;font-size:9px}
   .hero-action{width:100%}
   .hero-action .btn{min-height:54px}
   .note{margin-top:11px;font-size:9px;line-height:1.65}
@@ -191,9 +186,9 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
   .sec h2{font-size:19px}
   .job-grid{grid-template-columns:1fr}
   .advisor{padding-top:18px}
-  .advisor-head{min-height:68px;margin:0 0 12px;padding-left:77px}
-  .advisor-character{width:68px;height:68px}
-  .advisor-ng .advisor-head{padding-right:77px;padding-left:0}
+  .advisor-head{min-height:82px;margin:0 0 12px;padding-left:82px}
+  .advisor-character{width:72px;height:auto;max-height:82px}
+  .advisor-ng .advisor-head{padding-right:82px;padding-left:0}
   .advisor-bubble{padding:15px 14px;border-radius:16px}
   .advisor-bubble h2{font-size:17px;line-height:1.4}
   .advisor-bubble .h-note{font-size:10px;line-height:1.6}
@@ -206,7 +201,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
   .eyebrow{margin-bottom:5px}
   .hero h1{margin-bottom:8px;font-size:28px}
   .hero .lead{margin-bottom:7px;font-size:12px;line-height:1.48}
-  .hero-art{min-height:158px}
+  .hero-art{aspect-ratio:16/9}
   .hero-action .btn{min-height:50px}
   .note{margin-top:8px}
 }
@@ -231,11 +226,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
       </div>
     </div>
     <div class="hero-art" aria-label="副業タイプを表すキャラクターたち">
-      <div class="hero-orbit"></div>
-      <img class="hero-type fblp" src="images/FBLP.png" alt="堅実コツコツ職人のキャラクター">
-      <img class="hero-type fbad" src="images/FBAD.png" alt="直感クリエイターのキャラクター">
-      <img class="hero-type sblp" src="images/SBLP.png" alt="仕組みアーキテクトのキャラクター">
-      <img class="hero-type sead" src="images/SEAD.png" alt="主役型エンターテイナーのキャラクター">
+      <img class="hero-image" src="images/hero-characters.png" alt="副業タイプを表すビーバー、カメレオン、フクロウ、ライオンのキャラクター" width="1536" height="1024" fetchpriority="high" decoding="async">
       <span class="hero-stamp">あなたはどの働き方？</span>
     </div>
     <div class="hero-action">
