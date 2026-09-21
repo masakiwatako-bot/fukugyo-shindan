@@ -7,10 +7,11 @@
 <title>副業16タイプ診断｜続けやすい副業を見つける</title>
 <style>
 :root{
-  --bg:#f6f7fb;--card:#fff;--ink:#17203a;--sub:#65708a;--line:#e3e7f0;
-  --navy:#26396b;--teal:#168a7a;--coral:#ef725e;--violet:#7164d8;--rose:#d9567d;
-  --soft-teal:#eaf8f4;--soft-coral:#fff0ec;--soft-violet:#f0eeff;--soft-rose:#fff0f5;
-  --shadow:0 18px 50px rgba(40,54,93,.10);--shadow-sm:0 8px 24px rgba(40,54,93,.08);
+  --bg:#fff9f1;--card:#fff;--ink:#252144;--sub:#6f6888;--line:#eadff2;
+  --navy:#4c2f88;--teal:#20bea9;--coral:#ff6b68;--violet:#7c4dff;--rose:#ff4f9a;
+  --yellow:#ffd84d;--cyan:#39c8ff;--mint:#72e4c4;
+  --soft-teal:#e8fbf3;--soft-coral:#fff0e8;--soft-violet:#f1edff;--soft-rose:#fff0f7;
+  --shadow:0 22px 60px rgba(100,67,154,.14);--shadow-sm:0 10px 28px rgba(100,67,154,.10);
   --radius:24px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -18,8 +19,10 @@ html{scroll-behavior:smooth}
 body{
   min-height:100vh;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,-apple-system,BlinkMacSystemFont,sans-serif;
   background:
-    radial-gradient(circle at 10% 0%,rgba(113,100,216,.10),transparent 28rem),
-    radial-gradient(circle at 95% 18%,rgba(22,138,122,.09),transparent 25rem),
+    radial-gradient(circle at 8% 2%,rgba(255,216,77,.32),transparent 25rem),
+    radial-gradient(circle at 94% 13%,rgba(57,200,255,.19),transparent 27rem),
+    radial-gradient(circle at 73% 78%,rgba(255,79,154,.12),transparent 30rem),
+    radial-gradient(circle at 18% 72%,rgba(114,228,196,.18),transparent 24rem),
     var(--bg);
   color:var(--ink);line-height:1.75;-webkit-text-size-adjust:100%;
 }
@@ -30,40 +33,42 @@ img{display:block;max-width:100%}
 .skip-link{position:fixed;top:10px;left:10px;z-index:1000;transform:translateY(-150%);padding:10px 16px;border-radius:10px;background:var(--navy);color:#fff}
 .skip-link:focus{transform:none}
 .wrap{width:min(calc(100% - 32px),1080px);margin:0 auto;padding:18px 0 72px}
-button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outline-offset:4px}
+button:focus-visible,a:focus-visible{outline:3px solid rgba(124,77,255,.38);outline-offset:4px}
 
 /* introduction */
 .hero{
   min-height:650px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);
   grid-template-areas:"copy art" "action art";grid-template-rows:auto auto;
-  align-items:center;column-gap:48px;row-gap:0;padding:64px;border:1px solid rgba(255,255,255,.9);
-  border-radius:36px;background:rgba(255,255,255,.88);box-shadow:var(--shadow);overflow:hidden;position:relative;
+  align-items:center;column-gap:48px;row-gap:0;padding:64px;border:2px solid rgba(255,255,255,.94);
+  border-radius:36px;background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(255,248,254,.92));box-shadow:var(--shadow);overflow:hidden;position:relative;
 }
-.hero:before{content:"";position:absolute;width:310px;height:310px;right:-100px;top:-120px;border-radius:50%;background:linear-gradient(145deg,rgba(113,100,216,.18),rgba(22,138,122,.08))}
+.hero:before{content:"";position:absolute;width:390px;height:390px;right:-100px;top:-150px;border-radius:50%;background:conic-gradient(from 35deg,rgba(255,216,77,.34),rgba(57,200,255,.25),rgba(124,77,255,.22),rgba(255,79,154,.28),rgba(255,216,77,.34));filter:blur(3px)}
+.hero:after{content:"✦";position:absolute;left:42%;top:7%;color:var(--yellow);font-size:34px;text-shadow:70px 88px 0 rgba(57,200,255,.45),-315px 210px 0 rgba(255,79,154,.34),260px 430px 0 rgba(124,77,255,.28);pointer-events:none}
 .hero-copy{grid-area:copy;position:relative;z-index:2}
 .hero-action{grid-area:action;position:relative;z-index:2;align-self:start}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--violet);font-size:12px;font-weight:900;letter-spacing:.12em}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:#6d42db;font-size:12px;font-weight:900;letter-spacing:.12em}
 .eyebrow:before{content:"";width:20px;height:2px;background:currentColor}
 .hero h1{font-size:clamp(38px,5.2vw,64px);line-height:1.16;letter-spacing:-.055em;margin-bottom:22px}
-.hero h1 .accent{color:var(--violet)}
+.hero h1 .accent{background:linear-gradient(105deg,var(--violet),var(--rose) 58%,#ff8a48);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lead{max-width:590px;color:var(--sub);font-size:16px;margin-bottom:28px}
 .badges{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px}
-.badge{padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#536079;font-size:12px;font-weight:800}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:14px 28px;border:0;border-radius:17px;background:linear-gradient(135deg,var(--navy),#41558c);color:#fff;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 12px 26px rgba(38,57,107,.24);transition:transform .18s,box-shadow .18s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(38,57,107,.30)}
+.badge{padding:8px 13px;border:1px solid #eadff2;border-radius:999px;background:#fff7c8;color:#5d5277;font-size:12px;font-weight:800;box-shadow:0 5px 13px rgba(109,66,219,.07)}
+.badge:nth-child(2){background:#e4fbf3}.badge:nth-child(3){background:#fff0f7}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:14px 28px;border:0;border-radius:17px;background:linear-gradient(120deg,var(--violet),var(--rose) 62%,#ff7c54);color:#fff;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 13px 28px rgba(183,65,169,.29);transition:transform .18s,box-shadow .18s,filter .18s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 17px 34px rgba(183,65,169,.36);filter:saturate(1.08)}
 .btn.sub{background:#fff;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
 .note{max-width:580px;margin-top:18px;color:#7b8498;font-size:11px;line-height:1.8}
-.hero-art{grid-area:art;width:100%;aspect-ratio:3/2;align-self:center;position:relative;z-index:1}
-.hero-image{width:100%;height:100%;border-radius:26px;object-fit:contain;object-position:center;filter:drop-shadow(0 16px 22px rgba(31,44,78,.10))}
-.hero-stamp{position:absolute;z-index:3;left:50%;bottom:-7px;transform:translateX(-50%) rotate(-2deg);padding:11px 15px;border-radius:14px;background:var(--navy);color:#fff;font-size:12px;font-weight:900;box-shadow:var(--shadow-sm);white-space:nowrap}
+.hero-art{grid-area:art;width:100%;aspect-ratio:3/2;align-self:center;position:relative;z-index:1;padding:6px;border-radius:30px;background:linear-gradient(135deg,var(--yellow),var(--coral),var(--violet),var(--cyan));box-shadow:0 20px 42px rgba(129,73,194,.24);transform:rotate(1.2deg)}
+.hero-image{width:100%;height:100%;border-radius:24px;object-fit:cover;object-position:center;filter:saturate(1.05)}
+.hero-stamp{position:absolute;z-index:3;left:50%;bottom:-9px;transform:translateX(-50%) rotate(-2deg);padding:11px 16px;border:2px solid rgba(255,255,255,.75);border-radius:14px;background:linear-gradient(120deg,#5f36c8,var(--rose));color:#fff;font-size:12px;font-weight:900;box-shadow:0 10px 22px rgba(124,77,255,.27);white-space:nowrap}
 
 /* quiz */
 #quiz{max-width:880px;margin:auto}
-.progress-wrap{position:sticky;top:0;z-index:10;padding:12px 0 10px;background:rgba(246,247,251,.92);backdrop-filter:blur(12px)}
+.progress-wrap{position:sticky;top:0;z-index:10;padding:12px 0 10px;background:rgba(255,249,241,.92);backdrop-filter:blur(12px)}
 .progress-meta{display:flex;justify-content:space-between;margin-bottom:7px;color:var(--sub);font-size:12px;font-weight:800}
-.progress{height:8px;border-radius:999px;background:#e2e6ef;overflow:hidden}
-.progress-bar{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--violet),var(--teal));transition:width .28s ease}
-.qcard{margin-top:22px;padding:54px 46px 34px;border:1px solid rgba(255,255,255,.9);border-radius:30px;background:rgba(255,255,255,.95);box-shadow:var(--shadow)}
+.progress{height:9px;border-radius:999px;background:#eee4f4;overflow:hidden}
+.progress-bar{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--violet),var(--rose),var(--yellow),var(--teal));transition:width .28s ease}
+.qcard{margin-top:22px;padding:54px 46px 34px;border:2px solid rgba(255,255,255,.96);border-radius:30px;background:linear-gradient(150deg,rgba(255,255,255,.98),rgba(255,247,252,.96));box-shadow:var(--shadow)}
 .qnum{margin-bottom:18px;color:var(--violet);font-size:12px;font-weight:900;letter-spacing:.14em}
 .qtext{min-height:3.3em;margin:0 auto 44px;max-width:700px;text-align:center;font-size:clamp(23px,3.8vw,34px);font-weight:900;line-height:1.5;letter-spacing:-.02em}
 .scale{display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -75,11 +80,11 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
 .dot[data-v="2"],.dot[data-v="-2"]{width:58px;height:58px}
 .dot[data-v="1"],.dot[data-v="-1"]{width:47px;height:47px}
 .dot[data-v="0"]{width:36px;height:36px}
-.dot[data-v="2"],.dot[data-v="1"]{border-color:var(--teal)}
+.dot[data-v="2"],.dot[data-v="1"]{border-color:var(--coral)}
 .dot[data-v="-1"],.dot[data-v="-2"]{border-color:var(--violet)}
-.dot[data-v="0"]{border-color:#aab2c3}
-.dot.on[data-v="2"],.dot.on[data-v="1"]{background:var(--teal)}
-.dot.on[data-v="0"]{background:#aab2c3}
+.dot[data-v="0"]{border-color:#b9a9cb}
+.dot.on[data-v="2"],.dot.on[data-v="1"]{background:linear-gradient(145deg,var(--coral),#ff9c4a)}
+.dot.on[data-v="0"]{background:#b9a9cb}
 .dot.on[data-v="-1"],.dot.on[data-v="-2"]{background:var(--violet)}
 .qnav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:32px;padding-top:22px;border-top:1px solid var(--line)}
 .linkbtn{padding:8px;border:0;background:none;color:var(--sub);font-size:13px;font-weight:800;cursor:pointer}
@@ -88,16 +93,21 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
 
 /* result */
 #result{max-width:980px;margin:auto}
-.rcard{--type:#7164d8;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);column-gap:44px;padding:48px;border:0;border-radius:32px;background:linear-gradient(145deg,#26396b,#19264b);box-shadow:var(--shadow);color:#fff;text-align:left;overflow:hidden;position:relative}
-.rcard:after{content:"";position:absolute;right:-90px;bottom:-130px;width:330px;height:330px;border-radius:50%;background:color-mix(in srgb,var(--type) 35%,transparent)}
+.rcard{--type:#ff6b68;--type2:#ffd84d;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);column-gap:44px;padding:48px;border:2px solid rgba(255,255,255,.36);border-radius:32px;background:linear-gradient(140deg,#43217e 0%,#6534b4 54%,#d94f91 125%);box-shadow:0 24px 62px rgba(78,38,132,.25);color:#fff;text-align:left;overflow:hidden;position:relative}
+.rcard:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 8% 8%,color-mix(in srgb,var(--type2) 25%,transparent),transparent 28%),radial-gradient(circle at 94% 88%,color-mix(in srgb,var(--type) 36%,transparent),transparent 38%);pointer-events:none}
+.rcard:after{content:"✦";position:absolute;right:7%;top:7%;color:color-mix(in srgb,var(--type2) 82%,white);font-size:27px;text-shadow:-72px 48px 0 color-mix(in srgb,var(--type) 62%,transparent),34px 196px 0 rgba(255,255,255,.2),-455px 390px 0 color-mix(in srgb,var(--type2) 43%,transparent);pointer-events:none}
 .rkicker,.rname,.rcode,.rcatch,.rdesc,.axes,.border-result{grid-column:1;position:relative;z-index:2}
 .rkicker{color:#d8def1;font-size:11px;font-weight:900;letter-spacing:.15em}
 .rname{margin:8px 0 8px;font-size:clamp(34px,5vw,54px);line-height:1.2;letter-spacing:-.04em}
 .rcode{display:flex;gap:6px;margin:0 0 18px}
 .code-chip{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);font-size:14px;font-weight:900;letter-spacing:0}
 .rcatch{margin-bottom:22px;color:#dbe1f1;font-size:16px}
-.figure{grid-column:2;grid-row:1 / span 7;align-self:center;aspect-ratio:1;border-radius:26px;overflow:hidden;background:rgba(255,255,255,.10);position:relative;z-index:2}
-.figure img{width:100%;height:100%;object-fit:contain}
+.figure{grid-column:2;grid-row:1 / span 7;align-self:center;aspect-ratio:1;border:2px solid rgba(255,255,255,.28);border-radius:30px;overflow:hidden;background:radial-gradient(circle at 50% 52%,rgba(255,255,255,.18),rgba(255,255,255,.05) 47%,rgba(39,16,86,.26) 78%);box-shadow:inset 0 0 40px rgba(255,255,255,.07),0 18px 38px rgba(33,13,72,.22);position:relative;z-index:2;isolation:isolate}
+.figure:before{content:"";position:absolute;z-index:0;inset:10%;border-radius:50%;background:conic-gradient(from 8deg,transparent 0 7%,var(--type2) 12%,var(--type) 22%,transparent 29% 42%,var(--type2) 50%,var(--type) 61%,transparent 69% 82%,var(--type2) 90%,transparent 98%);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 14px),#000 calc(100% - 13px));mask:radial-gradient(farthest-side,transparent calc(100% - 14px),#000 calc(100% - 13px));filter:drop-shadow(0 0 9px var(--type)) drop-shadow(0 0 18px var(--type2));opacity:.94;animation:auraSpin 18s linear infinite}
+.figure:after{content:"";position:absolute;z-index:0;inset:3%;border-radius:50%;background:radial-gradient(circle at 18% 27%,var(--type2) 0 2px,transparent 3px),radial-gradient(circle at 84% 24%,#fff 0 2px,transparent 3px),radial-gradient(circle at 77% 75%,var(--type) 0 3px,transparent 4px),radial-gradient(circle at 20% 78%,#fff 0 1px,transparent 3px),radial-gradient(circle at 51% 8%,var(--type2) 0 3px,transparent 5px),repeating-conic-gradient(from 5deg,rgba(255,255,255,.12) 0 1deg,transparent 1deg 18deg);filter:drop-shadow(0 0 6px var(--type2));opacity:.78;animation:auraPulse 3.8s ease-in-out infinite}
+.figure img{width:100%;height:100%;object-fit:contain;position:relative;z-index:2;filter:drop-shadow(0 15px 14px rgba(25,10,59,.30)) drop-shadow(0 0 8px rgba(255,255,255,.20));transform:scale(1.03);transform-origin:center bottom}
+@keyframes auraSpin{to{transform:rotate(360deg)}}
+@keyframes auraPulse{50%{opacity:1;transform:scale(1.035)}}
 .ph{display:grid;place-items:center;height:100%;padding:20px;color:#dbe1f1;text-align:center;font-size:12px}
 .ph .em{display:block;font-size:40px}
 .rdesc{margin:0 0 24px;color:#f0f3fa;font-size:14px}
@@ -107,48 +117,50 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
 .axis-top b{color:#fff}
 .axis-bar{height:9px;border-radius:999px;background:rgba(255,255,255,.14);position:relative}
 .axis-bar:after{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:2px;background:rgba(255,255,255,.48)}
-.axis-fill{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--type)}
+.axis-fill{position:absolute;top:0;bottom:0;border-radius:999px;background:linear-gradient(90deg,var(--type),var(--type2));box-shadow:0 0 9px color-mix(in srgb,var(--type) 65%,transparent)}
 .reason.border-result{margin-top:18px;background:rgba(255,255,255,.10);color:#f1f4fa}
-.sec{margin-top:18px;padding:34px;border:1px solid rgba(227,231,240,.9);border-radius:26px;background:rgba(255,255,255,.94);box-shadow:var(--shadow-sm)}
+.sec{margin-top:18px;padding:34px;border:2px solid rgba(255,255,255,.92);border-radius:26px;background:rgba(255,255,255,.93);box-shadow:var(--shadow-sm)}
 .sec h2{display:flex;align-items:center;gap:9px;margin-bottom:7px;font-size:21px}
 .sec .h-note{margin-bottom:20px;color:var(--sub);font-size:12px}
 .job-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.job{display:flex;flex-direction:column;min-width:0;margin-bottom:12px;padding:18px;border:1px solid var(--line);border-radius:18px;background:#fbfcff}
-.job.ng{background:#fff9f7;border-color:#f1ded7}
+.job{display:flex;flex-direction:column;min-width:0;margin-bottom:12px;padding:18px;border:1px solid #e9ddf3;border-radius:18px;background:linear-gradient(155deg,#fff,#fff8fd);box-shadow:0 7px 18px rgba(102,68,148,.07)}
+.job.ng{background:linear-gradient(155deg,#fff,#fff5ec);border-color:#f4d9c8}
 .job-head{margin-bottom:7px}
 .job-name{font-size:16px;font-weight:900}
 .job-meta{margin-bottom:9px;color:var(--sub);font-size:10px}
 .job-desc{color:#4d5870;font-size:12px}
-.video-link{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:46px;margin-top:auto;padding:10px 13px;border-radius:13px;background:linear-gradient(135deg,var(--violet),#5142b8);color:#fff!important;font-size:12px!important;font-weight:900;text-decoration:none!important;box-shadow:0 8px 18px rgba(113,100,216,.22);transition:transform .18s,box-shadow .18s,filter .18s}
+.job-reason{margin-top:10px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,#e8fbf3,#f0fff4);color:#315f55;font-size:11px;line-height:1.65}
+.job.ng .job-reason{background:linear-gradient(135deg,#fff0e8,#fff5d9);color:#7c493f}
+.video-link{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:46px;margin-top:auto;padding:10px 13px;border-radius:13px;background:linear-gradient(120deg,var(--violet),var(--rose),#ff7659);color:#fff!important;font-size:12px!important;font-weight:900;text-decoration:none!important;box-shadow:0 9px 20px rgba(179,65,171,.25);transition:transform .18s,box-shadow .18s,filter .18s}
 .video-link:before{content:"▶";display:grid;place-items:center;width:25px;height:25px;flex:0 0 25px;border-radius:50%;background:rgba(255,255,255,.18);font-size:10px}
 .video-link:hover{transform:translateY(-1px);box-shadow:0 11px 22px rgba(113,100,216,.30);filter:saturate(1.08)}
 .video-link:focus-visible{outline:3px solid rgba(113,100,216,.32);outline-offset:3px}
 .job .job-desc:last-of-type{margin-bottom:18px}
 .advisor{display:block;min-height:0;height:auto;overflow:hidden;position:relative}
 .advisor:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;opacity:.5;pointer-events:none}
-.advisor-fit:before{left:-110px;top:-130px;background:var(--soft-teal)}
-.advisor-ng:before{right:-110px;top:-130px;background:#eef6ff}
+.advisor-fit:before{left:-110px;top:-130px;background:linear-gradient(135deg,var(--yellow),var(--mint))}
+.advisor-ng:before{right:-110px;top:-130px;background:linear-gradient(135deg,#ffc2de,#ffd79c)}
 .advisor-flow{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:100%;min-height:0;height:auto;position:relative;z-index:1}
 .advisor-head{display:flex;align-items:center;min-height:124px;height:auto;margin:0 0 16px;padding-left:128px;position:relative}
 .advisor-character{position:absolute;left:0;top:50%;width:112px;height:auto;max-height:124px;transform:translateY(-50%);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 12px 16px rgba(31,44,78,.12))}
 .advisor-bubble{width:100%;padding:20px 22px;border:1px solid;position:relative;border-radius:20px}
-.advisor-fit .advisor-bubble{background:#eefaf6;border-color:#ccece1}
+.advisor-fit .advisor-bubble{background:linear-gradient(135deg,#e8fbf3,#fff9ce);border-color:#c8ecd9}
 .advisor-ng .advisor-head{padding-right:128px;padding-left:0}
 .advisor-ng .advisor-character{right:0;left:auto}
-.advisor-ng .advisor-bubble{background:#f1f7ff;border-color:#d8e7f7}
+.advisor-ng .advisor-bubble{background:linear-gradient(135deg,#fff0f7,#fff6d8);border-color:#f2d6df}
 .advisor-bubble:before{content:"";position:absolute;left:-10px;top:50%;width:18px;height:18px;transform:translateY(-50%) rotate(45deg);background:inherit;border-left:1px solid;border-bottom:1px solid;border-color:inherit}
 .advisor-ng .advisor-bubble:before{left:auto;right:-10px;border-left:0;border-bottom:0;border-right:1px solid;border-top:1px solid;border-color:inherit}
 .advisor-bubble h2{margin-bottom:5px}
 .advisor-bubble .h-note{margin:0}
 .advisor .job-grid,.advisor .reason,.advisor .caution{flex:0 0 auto;position:relative;z-index:1}
 .reason,.caution{margin-top:16px;padding:18px;border-radius:16px;color:#4d5870;font-size:13px}
-.reason{background:#f2f4fb}
-.caution{background:#fff1ed}
+.reason{background:linear-gradient(135deg,#f1edff,#eafcff)}
+.caution{background:linear-gradient(135deg,#fff0e8,#fff7d7)}
 .reason>b:first-child,.caution>b:first-child{display:block;margin-bottom:5px;color:var(--ink)}
 .retry{text-align:center;margin-top:34px}
-.disc{max-width:850px;margin:24px auto 0;padding:18px;border-radius:16px;background:#eceff5;color:#68738a;font-size:10px;line-height:1.8}
+.disc{max-width:850px;margin:24px auto 0;padding:18px;border-radius:16px;background:#f1eaf5;color:#6f6888;font-size:10px;line-height:1.8}
 .public-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.public-links a{padding:7px 10px;border-radius:10px;background:#f4f5f9;color:var(--navy);font-size:10px;font-weight:800}
+.public-links a{padding:7px 10px;border-radius:10px;background:#f4edff;color:var(--navy);font-size:10px;font-weight:800}
 /* responsive */
 @media(max-width:840px){
   .hero{grid-template-columns:1fr;grid-template-areas:"copy" "art" "action";min-height:0;padding:46px 34px}
@@ -206,7 +218,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
   .note{margin-top:8px}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}
+  *,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
 </style>
 </head>
@@ -226,7 +238,7 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
       </div>
     </div>
     <div class="hero-art" aria-label="副業タイプを表すキャラクターたち">
-      <img class="hero-image" src="images/hero-characters.png" alt="副業タイプを表すビーバー、カメレオン、フクロウ、ライオンのキャラクター" width="1536" height="1024" fetchpriority="high" decoding="async">
+      <img class="hero-image" src="images/hero-keyvisual.png" alt="光の中を駆けるビーバー、カメレオン、フクロウ、ライオンのキャラクター" width="1536" height="1024" fetchpriority="high" decoding="async">
       <span class="hero-stamp">あなたはどの働き方？</span>
     </div>
     <div class="hero-action">
@@ -282,54 +294,46 @@ button:focus-visible,a:focus-visible{outline:3px solid rgba(38,57,107,.35);outli
 const AXES = [
   {k:"fs", neg:"Flow / 受託・即金型",  pos:"Stock / 仕組み構築型", nl:"F", pl:"S"},
   {k:"eb", neg:"Backstage / 裏方型",   pos:"Expose / 発信型",      nl:"B", pl:"E"},
-  {k:"la", neg:"Logic / 論理・言語型", pos:"Art / 感性・視覚型",   nl:"L", pl:"A"},
+  {k:"la", neg:"Language / 言語・構造型", pos:"Art / 視覚・感性型", nl:"L", pl:"A"},
   {k:"pd", neg:"Plan / 計画・堅実型",  pos:"Dash / 即興・行動型",  nl:"P", pl:"D"}
 ];
 
 const QUESTIONS_BY_AXIS = {
   fs:[
-    {t:"今すぐ手に入る数千円より、半年後に自動で入ってくる収入のほうが魅力的だ。", r:false},
-    {t:"誰かに頼まれた仕事をこなすより、自分で企画したものを育てていきたい。", r:false},
+    {t:"今すぐ手に入る数千円より、半年後に育つ収入のほうが魅力的だ。", r:false, anchor:1},
+    {t:"誰かに頼まれた仕事をこなすより、自分で企画したものを育てていきたい。", r:false, anchor:2},
     {t:"成果が出るまで半年かかると聞くと、やる気が続かない気がする。", r:true},
     {t:"納期と報酬がはっきり決まっている仕事のほうが安心して取り組める。", r:true},
-    {t:"数字がすぐ伸びなくても、積み上げている実感があれば続けられる。", r:false},
     {t:"まずは今月の収入を増やすことが、自分にとって最優先だ。", r:true},
     {t:"同じ作業を毎回繰り返すより、一度作って何度も使える形にしたい。", r:false},
     {t:"作ったものが誰にも見られない期間が続くのは、かなりつらいと思う。", r:true},
-    {t:"収入が不安定でも、上限のない働き方のほうに惹かれる。", r:false},
-    {t:"「確実にもらえる報酬」と「当たれば大きい報酬」なら、前者を選ぶ。", r:true}
+    {t:"収入が不安定でも、上限のない働き方のほうに惹かれる。", r:false}
   ],
   eb:[
-    {t:"自分の顔や名前を出して発信することに、あまり抵抗はない。", r:false},
-    {t:"人前に立つより、裏方で支えるほうが自分の力を発揮できる。", r:true},
-    {t:"自分の体験談を人に話すと、喜ばれたり感謝されたりすることが多い。", r:false},
+    {t:"自分の顔や名前を出して発信することに、あまり抵抗はない。", r:false, anchor:1},
+    {t:"人前に立つより、裏方で支えるほうが自分の力を発揮できる。", r:true, anchor:2},
     {t:"自分への評価やコメントが人目に触れると思うと、気が重くなる。", r:true},
     {t:"知らない人と話すことは、あまり苦にならない。", r:false},
     {t:"一人で黙々と作業している時間が、いちばん落ち着く。", r:true},
     {t:"自分の考えを発信して、反応をもらうのは楽しい。", r:false},
     {t:"目立つことより、頼まれたものを確実に仕上げることに関心がある。", r:true},
-    {t:"初対面の相手にも、自分から話しかけるほうだ。", r:false},
-    {t:"誰かに見られていると思うと、いつもの力が出しにくくなる。", r:true}
+    {t:"初対面の相手にも、自分から話しかけるほうだ。", r:false}
   ],
   la:[
-    {t:"説明書を読むより、まず触ってみて感覚でつかむほうが早い。", r:false},
-    {t:"物事は、筋道を立てて順番に理解していきたい。", r:true},
-    {t:"色や見た目の細かい違いが、よく目についてしまう。", r:false},
+    {t:"物事は、筋道を立てて順番に理解していきたい。", r:true, anchor:1},
+    {t:"色や見た目の細かい違いが、よく目についてしまう。", r:false, anchor:2},
     {t:"感覚的な話より、数字やデータをもとに判断したい。", r:true},
     {t:"頭に浮かんだイメージを、形にするのが好きだ。", r:false},
     {t:"文章を書くときは、構成を決めてから書き始めるほうだ。", r:true},
     {t:"「なんとなくこっちがいい」という感覚を、けっこう信じている。", r:false},
     {t:"ルールや手順が明確なほど、仕事がしやすいと感じる。", r:true},
-    {t:"音楽・映像・デザインなど、表現に触れている時間が好きだ。", r:false},
-    {t:"原因を分析して仕組みが理解できると、気持ちがいい。", r:true}
+    {t:"音楽・映像・デザインなど、表現に触れている時間が好きだ。", r:false}
   ],
   pd:[
-    {t:"旅行は、行き先だけ決めて、あとはその場で決めたい。", r:false},
-    {t:"予定は前もってカレンダーに書き込んでおきたい。", r:true},
-    {t:"気になったことは、その日のうちに試してみるほうだ。", r:false},
+    {t:"予定は前もってカレンダーに書き込んでおきたい。", r:true, anchor:1},
+    {t:"気になったことは、その日のうちに試してみるほうだ。", r:false, anchor:2},
     {t:"買い物は、しっかり下調べをしてから決めたい。", r:true},
     {t:"完璧じゃなくても、まず出してから直せばいいと思う。", r:false},
-    {t:"部屋やデスクは、決めた場所に物を戻さないと落ち着かない。", r:true},
     {t:"締め切り間際のほうが、集中力が出るタイプだ。", r:false},
     {t:"新しいことを始める前に、全体の流れを把握しておきたい。", r:true},
     {t:"迷ったときは、とりあえず動いてみるほうだ。", r:false},
@@ -337,12 +341,27 @@ const QUESTIONS_BY_AXIS = {
   ]
 };
 
-/* 軸を交互に配置（同一軸の連続を避ける） */
+const SUPPLEMENTAL_QUESTIONS = [
+  {indicator:"digital", t:"自分専用のPCと安定した通信環境があり、文書作成・表計算・オンライン会議の基本操作ができる。", r:false},
+  {indicator:"digital", t:"新しいAI・オンラインツールを、説明を見ながら試すことには強い抵抗がある。", r:true},
+  {indicator:"verify",  t:"AIや検索結果を仕事に使うときは、速さよりも元情報の確認を優先する。", r:false},
+  {indicator:"admin",   t:"複数の依頼と期限が重なると、抜け漏れが起きやすい。", r:true},
+  {indicator:"admin",   t:"指示に曖昧な点があれば、推測で進めず相手に確認できる。", r:false},
+  {indicator:"emotion", t:"相手が同じ悩みを繰り返しても、結論を急がずに聞ける。", r:false},
+  {indicator:"emotion", t:"重い相談を聞いたあと、その内容を私生活まで長く引きずりやすい。", r:true},
+  {indicator:"time",    t:"毎週一定の副業時間を確保することは難しい。", r:true}
+];
+
+/* 4タイプ軸＋1実行条件を1セットとして配置 */
 const QUESTIONS = (function(){
   const order = ["fs","eb","la","pd"], out = [];
-  for(let i=0;i<10;i++) for(const a of order){
-    const q = QUESTIONS_BY_AXIS[a][i];
-    out.push({axis:a, text:q.t, rev:q.r});
+  for(let i=0;i<8;i++){
+    for(const a of order){
+      const q = QUESTIONS_BY_AXIS[a][i];
+      out.push({kind:"axis", axis:a, text:q.t, rev:q.r, anchor:q.anchor || 0});
+    }
+    const s = SUPPLEMENTAL_QUESTIONS[i];
+    out.push({kind:"supplemental", indicator:s.indicator, text:s.t, rev:s.r});
   }
   return out;
 })();
@@ -393,10 +412,10 @@ const JOBS = [
    why:"設計した仕組みがそのまま相手の売上になるため、単価が高くなりやすい領域です。",
    ng:"ツールの仕様理解と設計力が前提で、感覚だけでは進めにくい仕事です。",
    url:"", beg:false},
-  {n:"AI活用の代行業務", cat:"受託", c:{fs:-.3,eb:-.5,la:-.9,pd:.3}, cost:"0〜3千円", speed:"最短1ヶ月",
-   d:"ChatGPTなどのAIを使って、記事作成・リサーチ・要約などを効率化して請け負う仕事。",
-   why:"手を動かす量ではなく「使いこなす頭」で差がつくため、後発でも追いつきやすい分野です。",
-   ng:"AIに任せきりでは品質が伴わず、「簡単に稼げる」という期待とのギャップが大きい仕事です。",
+  {n:"AI活用・業務効率化支援", cat:"受託", c:{fs:-.3,eb:-.5,la:-.9,pd:.3}, cost:"0〜3千円", speed:"最短1ヶ月",
+   d:"AIを使って、リサーチ・要約・資料作成など、依頼者の業務を速く正確に進める支援。",
+   why:"ツールを試す力と検証する力を組み合わせ、相手の作業を改善できるのが強みです。",
+   ng:"AIの回答を検証せず納品すると信用を失います。ツールの変化を学び続ける姿勢も必要です。",
    url:"https://youtu.be/pTsd3TPtQgI", beg:false},
   {n:"プログラミング", cat:"受託", c:{fs:-.7,eb:-.9,la:-1,pd:-.6}, cost:"0〜2万円", speed:"最短6ヶ月",
    d:"Webサイトやツールを作る仕事。まずProgateで、自分に合うかを試すところから。",
@@ -483,10 +502,10 @@ const JOBS = [
    why:"思い立ったらすぐ動けて、確実に収入になります。行動の速さが最大の武器になります。",
    ng:"在宅ではなく現地作業が中心で、時間を売る働き方から抜け出せません。",
    low:true, url:"https://youtu.be/SI2KJ63eqM8", beg:false},
-  {n:"カウンセリング・愚痴聞き", cat:"受託", c:{fs:-.6,eb:.5,la:.2,pd:.1}, cost:"0円", speed:"最短1ヶ月",
-   d:"話を聞くこと自体をサービスとして提供する副業。共感力がそのまま商品になります。",
-   why:"人の話に寄り添う力が直接収入になり、特別なスキルや道具が要りません。",
-   ng:"相手の感情を受け止め続けるため、精神的な消耗が大きい仕事です。",
+  {n:"傾聴・愚痴聞き（非医療）", cat:"受託", c:{fs:-.6,eb:.5,la:.2,pd:.1}, cost:"0円", speed:"最短1ヶ月",
+   d:"相手の話を評価せずに聞くことを、非医療の相談サービスとして提供する副業。",
+   why:"共感力に加え、同じ話にも急かさず向き合える忍耐力と、感情を切り替える力が活きます。",
+   ng:"相手の感情を受け止め続けるため、境界線を保てないと精神的な消耗が大きい仕事です。",
    url:"https://youtu.be/f9AGUKo6RJE", beg:false},
   {n:"ひとり起業（オリジナル商品）", cat:"起業", c:{fs:1,eb:.5,la:0,pd:-.3}, cost:"0〜10万円", speed:"6ヶ月〜",
    d:"自分の得意や経験をもとに商品・サービスを作って売る、副業の最終形。",
@@ -508,6 +527,44 @@ const JOBS = [
    ngExtra:"「まず手を動かして副業を始めた実感がほしい」という目的なら意味はありますが、収入を伸ばす前提なら早めに次のステップへ移るのがおすすめです。",
    url:"https://youtu.be/fHBlgHf0Z5Q", beg:false}
 ];
+
+/*
+  i: 4軸の重要度（副業の目標座標cとは分離）
+  r: 実務準備度の最低目安 / f: 実行条件 / b: 初心者向け優先度
+  値が最低目安を上回っても加点せず、不足分だけを減点する。
+*/
+const JOB_PROFILES = {
+  "Webライティング":              {t:{fs:-.65,eb:-.55,la:-.55,pd:-.25},i:{fs:.7,eb:.65,la:.7,pd:.35}, r:{digital:.45,verify:.45,admin:.35}, f:{pc:true,time:.35}, b:85},
+  "動画編集":                      {i:{fs:.5,eb:.55,la:.9,pd:.4},  r:{digital:.55,verify:.4,admin:.45},  f:{pc:true,time:.5},  b:80},
+  "Webデザイン":                   {i:{fs:.5,eb:.55,la:.95,pd:.4}, r:{digital:.5,verify:.4,admin:.45},   f:{pc:true,time:.5},  b:80},
+  "データ入力":                    {i:{fs:.45,eb:.5,la:.45,pd:.45},r:{digital:.35,verify:.65,admin:.55}, f:{pc:true,time:.3},  b:55},
+  "文字起こし":                    {i:{fs:.45,eb:.5,la:.45,pd:.4}, r:{digital:.35,verify:.6,admin:.4},   f:{pc:true,time:.35}, b:55},
+  "オンライン秘書":                {t:{fs:-.75,eb:-.35,la:-.4,pd:-.65},i:{fs:.4,eb:.25,la:.15,pd:.55},r:{digital:.45,verify:.45,admin:.55},f:{pc:true,time:.45},b:90},
+  "SNS運用代行":                   {i:{fs:.45,eb:.45,la:.5,pd:.35},r:{digital:.55,verify:.65,admin:.6},  f:{pc:true,time:.55}, b:70},
+  "LINE構築":                      {i:{fs:.45,eb:.4,la:.65,pd:.55},r:{digital:.65,verify:.65,admin:.65}, f:{pc:true,time:.55}, b:55},
+  "AI活用・業務効率化支援":         {i:{fs:.35,eb:.3,la:.7,pd:.4},  r:{digital:.7,verify:.65,admin:.55},  f:{pc:true,time:.45}, b:68, verifyGate:.5},
+  "プログラミング":                {i:{fs:.4,eb:.2,la:.95,pd:.75}, r:{digital:.75,verify:.7,admin:.4},   f:{pc:true,time:.7},  b:20, stretch:true},
+  "YouTube（長尺）":               {i:{fs:.9,eb:.8,la:.55,pd:.3},  r:{digital:.5,verify:.5,admin:.45},   f:{pc:true,time:.75}, b:45},
+  "YouTubeショート":               {i:{fs:.75,eb:.65,la:.6,pd:.65},r:{digital:.5,verify:.45,admin:.4},   f:{pc:true,time:.6},  b:55},
+  "Instagram":                    {i:{fs:.75,eb:.65,la:.85,pd:.45},r:{digital:.45,verify:.45,admin:.4}, f:{time:.55},          b:55},
+  "TikTok":                       {i:{fs:.7,eb:.8,la:.65,pd:.8},   r:{digital:.4,verify:.4,admin:.35},   f:{time:.5},           b:50},
+  "Threads":                      {i:{fs:.65,eb:.55,la:.5,pd:.6}, r:{digital:.35,verify:.55,admin:.4},  f:{time:.5},           b:55},
+  "ブログ":                        {i:{fs:.9,eb:.4,la:.65,pd:.65}, r:{digital:.5,verify:.65,admin:.4},   f:{pc:true,time:.7},  b:48},
+  "note":                         {t:{fs:.75,eb:.4,la:-.4,pd:-.1},i:{fs:.8,eb:.55,la:.7,pd:.35},       r:{digital:.3,verify:.6,admin:.35}, f:{time:.6}, b:52},
+  "ライブ配信":                    {i:{fs:.55,eb:1,la:.35,pd:.85}, r:{digital:.25,verify:.25,admin:.25}, f:{time:.45},          b:42},
+  "楽天ROOM":                     {t:{fs:.7,eb:.15,la:.4,pd:.15}, i:{fs:.85,eb:.5,la:.65,pd:.45},       r:{digital:.35,verify:.6,admin:.45},f:{time:.55}, b:50},
+  "Kindle出版":                   {i:{fs:.85,eb:.45,la:.65,pd:.6},r:{digital:.4,verify:.55,admin:.45},  f:{pc:true,time:.65}, b:48},
+  "LINEスタンプ販売":             {i:{fs:.7,eb:.35,la:1,pd:.35},  r:{digital:.35,verify:.3,admin:.3},   f:{time:.45},          b:45},
+  "ハンドメイド販売":              {i:{fs:.55,eb:.3,la:.95,pd:.4},r:{verify:.35,admin:.5},               f:{time:.65},          b:48},
+  "メルカリ（不用品販売）":         {i:{fs:.65,eb:.35,la:.2,pd:.65},r:{digital:.2,verify:.4,admin:.4},    f:{time:.2},           b:75},
+  "ポイ活":                        {i:{fs:.7,eb:.25,la:.15,pd:.35},r:{digital:.15,verify:.25},            f:{time:.1},           b:32},
+  "アンケート回答":                {i:{fs:.7,eb:.25,la:.2,pd:.35}, r:{digital:.1,verify:.25},             f:{time:.1},           b:28},
+  "スキマバイト（タイミー等）":     {i:{fs:.85,eb:.25,la:.15,pd:.8},r:{admin:.3},                          f:{time:.25,outside:true},b:52},
+  "傾聴・愚痴聞き（非医療）":       {t:{fs:-.55,eb:.8,la:.1,pd:-.35},i:{fs:.55,eb:1,la:.25,pd:.7},r:{digital:.2,verify:.45,admin:.55,emotion:.85},f:{time:.55},b:18,emotionGate:true},
+  "ひとり起業（オリジナル商品）":   {i:{fs:1,eb:.55,la:.35,pd:.45}, r:{digital:.5,verify:.6,admin:.6},     f:{time:.75},          b:15, stretch:true},
+  "せどり・転売":                  {i:{fs:.65,eb:.3,la:.35,pd:.55},r:{digital:.3,verify:.6,admin:.6},     f:{time:.55,cost:true},b:10},
+  "内職（袋詰め・シール貼り等）":   {i:{fs:.75,eb:.25,la:.1,pd:.35},r:{admin:.25},                         f:{time:.35},          b:8}
+};
 
 /* =========================================================
    16タイプ定義
@@ -610,66 +667,197 @@ function goBack(){ if(transitionTimer === null && idx > 0){ idx--; render(); } }
 /* =========================================================
    判定
    ========================================================= */
-function computeScores(){
+function computeScores(responseValues){
+  const values = responseValues || answers;
   const raw = {fs:0, eb:0, la:0, pd:0};
+  const buckets = {digital:[], verify:[], admin:[], emotion:[], time:[]};
+  let pc = .5;
   QUESTIONS.forEach(function(q,i){
-    const v = answers[i] === null ? 0 : answers[i];
-    raw[q.axis] += q.rev ? -v : v;
+    const answerValue = values[i] === null || values[i] === undefined ? 0 : values[i];
+    const adjusted = q.rev ? -answerValue : answerValue;
+    if(q.kind === "axis") raw[q.axis] += adjusted;
+    else {
+      const normalized = (adjusted + 2) / 4;
+      buckets[q.indicator].push(normalized);
+      if(q.indicator === "digital" && buckets.digital.length === 1) pc = normalized;
+    }
   });
   const norm = {};
-  for(const k in raw) norm[k] = raw[k] / 20;   /* -1.0 〜 +1.0 */
-  return norm;
+  for(const k in raw) norm[k] = raw[k] / 16;   /* 各軸8問: -1.0 〜 +1.0 */
+  const indicators = {pc:pc};
+  for(const k in buckets){
+    const valuesForIndicator = buckets[k];
+    indicators[k] = valuesForIndicator.reduce(function(sum,value){ return sum + value; },0) / valuesForIndicator.length;
+  }
+  return {norm:norm, raw:raw, indicators:indicators, values:values};
 }
 
-function typeCode(norm){
-  return AXES.map(function(a){
-    return norm[a.k] >= 0 ? a.pl : a.nl;
+function resolveAxisDirection(profile, axis){
+  if(profile.raw[axis.k] !== 0) return profile.raw[axis.k] > 0 ? 1 : -1;
+  const anchors = QUESTIONS.map(function(q,index){ return {q:q,index:index}; })
+    .filter(function(item){ return item.q.kind === "axis" && item.q.axis === axis.k && item.q.anchor; })
+    .sort(function(a,b){ return a.q.anchor - b.q.anchor; });
+  for(const anchor of anchors){
+    const answerValue = profile.values[anchor.index] || 0;
+    const adjusted = anchor.q.rev ? -answerValue : answerValue;
+    if(adjusted !== 0) return adjusted > 0 ? 1 : -1;
+  }
+  return -1; /* 全回答中立時は初心者向けの低リスク側 F/B/L/P */
+}
+
+function typeCode(profile){
+  return AXES.map(function(axis){
+    return resolveAxisDirection(profile, axis) > 0 ? axis.pl : axis.nl;
   }).join("");
 }
 
-const W = {fs:1.3, eb:1.2, la:1.0, pd:0.8};
+const AXIS_REASON = {
+  fs:"報酬を得るまでの待ち方",
+  eb:"人前に出る範囲や対人交流の量",
+  la:"得意な表現手段",
+  pd:"計画と行動のペース"
+};
+const READINESS_REASON = {
+  digital:"PC・オンラインツールの準備度",
+  verify:"情報を確かめて品質を守る力",
+  admin:"期限管理と依頼者への確認・連絡",
+  emotion:"重い話を受け止めて切り替える力"
+};
 
-function rankJobs(norm){
-  return JOBS.map(function(j){
-    /* その副業が「どの軸を本当に選り好みするか」の強さ(|座標|)で重みづけ。
-       中立な軸(座標≒0)は判定に影響させない。 */
-    let num = 0, den = 0;
-    for(const k in W){
-      const rel = W[k] * Math.abs(j.c[k]);
-      const diff = norm[k] - j.c[k];
-      num += rel * diff * diff;
-      den += rel;
-    }
-    let d = Math.sqrt(den > 0 ? num / den : 0);
-    if(j.beg) d *= 0.85;   /* 初心者に堅実な3副業を優先（ゆいパパ方針） */
-    if(j.low) d *= 1.18;   /* スキルも実績も残らない作業は上位に出しすぎない */
-    return {job:j, dist:d};
-  }).sort(function(a,b){ return a.dist - b.dist; });
+function scoreJob(profile, job){
+  const settings = JOB_PROFILES[job.n];
+  if(!settings) throw new Error("副業プロファイルがありません: " + job.n);
+  const target = settings.t || job.c;
+  let styleNumerator = 0, styleDenominator = 0;
+  const axisPenalties = {};
+  for(const k in settings.i){
+    /* 8問平均は中央へ集まりやすいため、符号と順位を保ったまま感度を補正する。 */
+    const measured = Math.sign(profile.norm[k]) * Math.sqrt(Math.abs(profile.norm[k]));
+    const difference = Math.abs(measured - target[k]) / 2;
+    const contribution = settings.i[k] * difference * difference;
+    styleNumerator += contribution;
+    styleDenominator += settings.i[k];
+    axisPenalties[k] = difference * settings.i[k];
+  }
+  const styleMismatch = Math.sqrt(styleNumerator / styleDenominator);
+  const styleScore = Math.max(0, 100 * (1 - styleMismatch));
+
+  const readinessGaps = {};
+  const requirements = settings.r || {};
+  for(const k in requirements){
+    const minimum = requirements[k];
+    const actual = profile.indicators[k];
+    readinessGaps[k] = Math.max(0, (minimum - actual) / minimum);
+  }
+  const readinessKeys = Object.keys(readinessGaps);
+  const readinessGap = readinessKeys.length
+    ? readinessKeys.reduce(function(sum,k){ return sum + readinessGaps[k]; },0) / readinessKeys.length
+    : 0;
+  const readinessScore = 100 * (1 - readinessGap);
+
+  const feasibility = settings.f || {};
+  const timeMinimum = feasibility.time || 0;
+  const timeGap = timeMinimum ? Math.max(0, (timeMinimum - profile.indicators.time) / timeMinimum) : 0;
+  let feasibilityScore = 100 * (1 - timeGap);
+  const hardPC = feasibility.pc === true && profile.indicators.pc < .5;
+  if(hardPC) feasibilityScore = Math.min(feasibilityScore, 15);
+
+  const emotion = profile.indicators.emotion;
+  const emotionLow = settings.emotionGate === true && emotion < .35;
+  const emotionMedium = settings.emotionGate === true && emotion >= .35 && emotion < .625;
+  if(emotionLow) feasibilityScore = Math.min(feasibilityScore, 20);
+  if(emotionMedium) feasibilityScore = Math.min(feasibilityScore, 40 + 60 * ((emotion - .35) / .275));
+
+  const verifyLow = settings.verifyGate !== undefined && profile.indicators.verify < settings.verifyGate;
+  if(verifyLow) feasibilityScore = Math.min(feasibilityScore, 35);
+
+  let total = .55 * styleScore + .25 * readinessScore + .15 * feasibilityScore + .05 * settings.b;
+  const stretchReady = settings.stretch !== true || (
+    styleScore >= 88 && profile.indicators.digital >= .85 &&
+    profile.indicators.verify >= .75 && profile.indicators.time >= .8
+  );
+  if(!stretchReady) total = Math.min(total, 65);
+  if(hardPC || emotionLow || verifyLow) total = Math.min(total, 42);
+
+  const readinessMax = readinessKeys.reduce(function(best,k){
+    return readinessGaps[k] > best.value ? {key:k,value:readinessGaps[k]} : best;
+  }, {key:"",value:0});
+  const axisMax = Object.keys(axisPenalties).reduce(function(best,k){
+    return axisPenalties[k] > best.value ? {key:k,value:axisPenalties[k]} : best;
+  }, {key:"",value:0});
+
+  const penaltyCandidates = [
+    {kind:"hardPC", value:hardPC ? 120 : 0},
+    {kind:"readiness", key:readinessMax.key, value:readinessMax.value * 60},
+    {kind:"style", key:axisMax.key, value:styleMismatch * 48},
+    {kind:"time", value:timeGap * 65},
+    {kind:"emotion", value:settings.emotionGate ? Math.max(0, (.625 - emotion) / .625) * 95 : 0},
+    {kind:"verifyGate", value:verifyLow ? 90 : 0}
+  ].sort(function(a,b){ return b.value - a.value; });
+
+  return {
+    job:job,
+    total:total,
+    styleScore:styleScore,
+    styleMismatch:styleMismatch,
+    readinessScore:readinessScore,
+    feasibilityScore:feasibilityScore,
+    hardPC:hardPC,
+    eligible:job.ok !== false && !hardPC && !emotionLow && !verifyLow && stretchReady,
+    primaryPenalty:penaltyCandidates[0],
+    unfitScore:penaltyCandidates[0].value + penaltyCandidates[1].value * .25
+  };
+}
+
+function rankJobs(profile){
+  return JOBS.map(function(job){ return scoreJob(profile,job); })
+    .sort(function(a,b){ return b.total - a.total || a.job.n.localeCompare(b.job.n,"ja"); });
 }
 
 function pickFit(ranked){
-  const out = [], catCount = {};
-  for(const r of ranked){
-    if(r.job.ok === false) continue;                     /* せどり・内職は除外 */
-    const c = r.job.cat;
-    if((catCount[c] || 0) >= 2) continue;                /* 同カテゴリは最大2件 */
-    catCount[c] = (catCount[c] || 0) + 1;
-    out.push(r.job);
+  const out = [];
+  let clientWorkCount = 0;
+  for(const scored of ranked){
+    if(!scored.eligible) continue;
+    if(scored.job.cat === "受託" && clientWorkCount >= 2) continue;
+    out.push(scored);
+    if(scored.job.cat === "受託") clientWorkCount++;
     if(out.length === 3) break;
   }
-  return out;
+
+  if(out.length === 3 && out[0].job.cat === out[1].job.cat && out[1].job.cat === out[2].job.cat){
+    const replacement = ranked.find(function(candidate){
+      return candidate.eligible && candidate.job.cat !== out[2].job.cat &&
+        out.every(function(chosen){ return chosen.job.n !== candidate.job.n; }) &&
+        out[2].total - candidate.total <= 3;
+    });
+    if(replacement) out[2] = replacement;
+  }
+  return out.sort(function(a,b){ return b.total - a.total; });
+}
+
+function mismatchReason(scored){
+  const penalty = scored.primaryPenalty;
+  if(penalty.kind === "hardPC") return "PC環境が前提のため、現在の環境では準備負担が大きくなります。";
+  if(penalty.kind === "verifyGate") return "情報の確認精度が重要なため、検証手順を身につけてからのほうが安全です。";
+  if(penalty.kind === "emotion") return "共感力だけでなく、同じ話を聞き続ける忍耐力と感情を切り替える力が求められます。";
+  if(penalty.kind === "time") return "毎週の作業時間を安定して確保する必要があり、今の条件では継続負担が大きくなります。";
+  if(penalty.kind === "readiness") return READINESS_REASON[penalty.key] + "が求められるため、先に小さな練習が必要です。";
+  return AXIS_REASON[penalty.key] + "が今の回答傾向と離れており、無理をすると消耗しやすい組み合わせです。";
 }
 
 function pickUnfit(ranked, fit){
-  const fitNames = fit.map(function(j){ return j.n; });
-  const rev = ranked.slice().reverse();
-  const out = [], catCount = {};
-  for(const r of rev){
-    if(fitNames.indexOf(r.job.n) >= 0) continue;
-    const c = r.job.cat;
-    if((catCount[c] || 0) >= 2) continue;
-    catCount[c] = (catCount[c] || 0) + 1;
-    out.push(r.job);
+  const fitNames = fit.map(function(item){ return item.job.n; });
+  const candidates = ranked.filter(function(item){
+    return item.job.ok !== false && fitNames.indexOf(item.job.n) < 0;
+  }).sort(function(a,b){ return b.unfitScore - a.unfitScore || a.job.n.localeCompare(b.job.n,"ja"); });
+  const out = [], categoryCounts = {};
+  for(const scored of candidates){
+    const category = scored.job.cat;
+    if((categoryCounts[category] || 0) >= 2) continue;
+    categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+    scored.mismatchReason = mismatchReason(scored);
+    out.push(scored);
     if(out.length === 3) break;
   }
   return out;
@@ -680,8 +868,19 @@ function pickUnfit(ranked, fit){
    ========================================================= */
 function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
 
-function typeTheme(code){
-  return {FB:"#28a694",FE:"#f07b62",SB:"#8a78e6",SE:"#e5618a"}[code.slice(0,2)] || "#7164d8";
+function typeThemeStyle(code){
+  const themes = {
+    FBLP:["#ff765d","#ffd84d"], FBLD:["#ff8a3d","#39c8ff"],
+    FBAP:["#ff4f9a","#ffd45c"], FBAD:["#ff655f","#9a5cff"],
+    FELP:["#20bea9","#ffe35b"], FELD:["#32c9e8","#ff8a4b"],
+    FEAP:["#ff6f86","#ffc54d"], FEAD:["#ffd447","#ff4f9a"],
+    SBLP:["#8b5cf6","#45d4ff"], SBLD:["#4285ff","#8ee45a"],
+    SBAP:["#9d59f4","#ff68be"], SBAD:["#20c9bb","#ffdf4f"],
+    SELP:["#5576f4","#ffd84d"], SELD:["#24b8b0","#ff61a6"],
+    SEAP:["#ed4fa8","#ffc54d"], SEAD:["#ff7a45","#f044b3"]
+  };
+  const colors = themes[code] || ["#ff6b68","#ffd84d"];
+  return "--type:" + colors[0] + ";--type2:" + colors[1];
 }
 
 function codeHTML(code){
@@ -691,16 +890,20 @@ function codeHTML(code){
   }).join("") + '</div>';
 }
 
-function jobHTML(j, isNG){
+function jobHTML(scored, isNG){
+  const j = scored.job;
   const link = (!isNG && j.url)
       ? '<a class="video-link" href="' + j.url + '" target="_blank" rel="noopener">解説動画を見る</a>' : "";
   const extra = (isNG && j.ngExtra) ? '<p class="job-desc" style="margin-top:10px">' + j.ngExtra + '</p>' : "";
   const ngLink = (isNG && j.ngExtra && j.url)
       ? '<a class="video-link" href="' + j.url + '" target="_blank" rel="noopener">まずはココから（解説動画）</a>' : "";
+  const reason = isNG
+    ? '<p class="job-reason"><b>注意したいポイント：</b>' + esc(scored.mismatchReason) + '</p>'
+    : '<p class="job-reason"><b>向いているポイント：</b>' + esc(j.why) + '</p>';
   return '<div class="job' + (isNG ? " ng" : "") + '">' +
     '<div class="job-head"><span class="job-name">' + esc(j.n) + '</span></div>' +
     '<div class="job-meta">初期費用：' + esc(j.cost) + '　／　収益化の目安：' + esc(j.speed) + '</div>' +
-    '<p class="job-desc">' + esc(j.d) + '</p>' + extra + link + ngLink + '</div>';
+    '<p class="job-desc">' + esc(j.d) + '</p>' + reason + extra + link + ngLink + '</div>';
 }
 
 function axisHTML(norm){
@@ -721,10 +924,11 @@ function axisHTML(norm){
 }
 
 function showResult(){
-  const norm = computeScores();
-  const code = typeCode(norm);
+  const profile = computeScores();
+  const norm = profile.norm;
+  const code = typeCode(profile);
   const t = TYPES[code];
-  const ranked = rankJobs(norm);
+  const ranked = rankJobs(profile);
   const fit = pickFit(ranked);
   const unfit = pickUnfit(ranked, fit);
 
@@ -757,8 +961,8 @@ function showResult(){
 
   const ngReason =
     '<div class="caution"><b>向いていない理由と、それでも挑戦したい場合のポイント</b>' +
-    'これらは「あなたには無理」という意味ではなく、<b>あなたの強みが活きにくく、消耗しやすい</b>組み合わせです。' +
-    'とくに気をつけたいのは<b>' + esc(t.w) + '</b>という点。上の副業はこの弱点がそのまま出やすい構造になっています。<br><br>' +
+    'これらは「あなたには無理」という意味ではなく、<b>今の働き方・準備度・確保できる時間では負担が大きく、消耗しやすい</b>組み合わせです。' +
+    'カードには、回答とのズレが最も大きかったポイントを表示しています。タイプ全体の注意点である<b>' + esc(t.w) + '</b>もあわせて確認してください。<br><br>' +
     'それでも挑戦したい場合は、<b>いきなり本格的に始めないこと</b>。' +
     'まずは1〜2週間だけ、最小の形で試してください。' +
     (norm.pd >= 0
@@ -767,7 +971,7 @@ function showResult(){
     '</div>';
 
   const html =
-    '<div class="rcard" style="--type:' + typeTheme(code) + '">' +
+    '<div class="rcard" style="' + typeThemeStyle(code) + '">' +
       '<div class="rkicker">あなたの副業タイプは</div>' +
       '<h1 class="rname">' + esc(t.n) + '</h1>' +
       codeHTML(code) +
@@ -787,7 +991,7 @@ function showResult(){
         '<div class="advisor-head">' +
           '<img class="advisor-character" src="images/yuipapa.png" alt="おすすめの副業を案内するゆいパパ">' +
           '<div class="advisor-bubble"><h2>あなたに向いている副業</h2>' +
-            '<p class="h-note">相性の良い順に3つ。<br>まずはこの中から1つだけ選んで始めるのが、いちばん成功への近道です！</p>' +
+            '<p class="h-note">相性と始めやすさをもとに選んだ3つ。<br>まずはこの中から1つだけ選んで始めるのが、いちばん成功への近道です！</p>' +
           '</div>' +
         '</div>' +
         '<div class="job-grid">' + fit.map(function(j){ return jobHTML(j, false); }).join("") + '</div>' + fitReason +
@@ -799,7 +1003,7 @@ function showResult(){
         '<div class="advisor-head">' +
           '<img class="advisor-character" src="images/yuimama.png" alt="注意点を案内するゆいママ">' +
           '<div class="advisor-bubble"><h2>現時点では向きにくい副業</h2>' +
-            '<p class="h-note">相性が出にくい順に3つ。<br>挑戦するなら、下の注意点を読んでからにしてくださいね。</p>' +
+            '<p class="h-note">今の条件で負担が大きいものから3つ。<br>挑戦するなら、カードの注意点を読んでからにしてくださいね。</p>' +
           '</div>' +
         '</div>' +
         '<div class="job-grid">' + unfit.map(function(j){ return jobHTML(j, true); }).join("") + '</div>' + ngReason +
@@ -862,27 +1066,56 @@ function runSelfChecks(){
   if(QUESTIONS.length !== 40) errors.push("設問数が40ではありません");
   AXES.forEach(function(axis){
     const items = QUESTIONS.filter(function(question){ return question.axis === axis.k; });
-    if(items.length !== 10) errors.push(axis.k + "の設問数が10ではありません");
-    if(items.filter(function(question){ return question.rev; }).length !== 5) errors.push(axis.k + "の逆転項目が5問ではありません");
+    if(items.length !== 8) errors.push(axis.k + "の設問数が8ではありません");
+    if(items.filter(function(question){ return question.rev; }).length !== 4) errors.push(axis.k + "の逆転項目が4問ではありません");
+    if(items.filter(function(question){ return question.anchor; }).length < 2) errors.push(axis.k + "の同点判定アンカーが不足しています");
   });
+  if(QUESTIONS.filter(function(question){ return question.kind === "supplemental"; }).length !== 8) errors.push("実行条件の設問数が8ではありません");
   if(Object.keys(TYPES).length !== 16) errors.push("タイプ数が16ではありません");
   if(JOBS.length !== 30) errors.push("副業数が30ではありません");
+  if(Object.keys(JOB_PROFILES).length !== JOBS.length) errors.push("副業プロファイル数が一致しません");
+  JOBS.forEach(function(job){ if(!JOB_PROFILES[job.n]) errors.push(job.n + "の副業プロファイルがありません"); });
   Object.keys(TYPES).forEach(function(code){
-    const norm = {};
-    AXES.forEach(function(axis,index){ norm[axis.k] = code[index] === axis.pl ? .75 : -.75; });
-    if(typeCode(norm) !== code) errors.push(code + "を再現できません");
-    const ranked = rankJobs(norm), fit = pickFit(ranked), unfit = pickUnfit(ranked,fit);
-    const names = fit.concat(unfit).map(function(job){ return job.n; });
-    if(fit.length !== 3 || unfit.length !== 3 || new Set(names).size !== 6) errors.push(code + "の推薦件数または重複が不正です");
-    if(fit.some(function(job){ return job.ok === false; })) errors.push(code + "に推薦対象外の副業が入りました");
-    [fit,unfit].forEach(function(list){
-      const counts = {};
-      list.forEach(function(job){ counts[job.cat] = (counts[job.cat] || 0) + 1; });
-      if(Object.values(counts).some(function(count){ return count > 2; })) errors.push(code + "で同一カテゴリが3件並びました");
+    const norm = {}, raw = {};
+    AXES.forEach(function(axis,index){
+      norm[axis.k] = code[index] === axis.pl ? .75 : -.75;
+      raw[axis.k] = code[index] === axis.pl ? 12 : -12;
     });
+    const profile = {norm:norm,raw:raw,indicators:{pc:1,digital:.75,verify:.75,admin:.75,emotion:.75,time:.75},values:new Array(40).fill(0)};
+    if(typeCode(profile) !== code) errors.push(code + "を再現できません");
+    const ranked = rankJobs(profile), fit = pickFit(ranked), unfit = pickUnfit(ranked,fit);
+    const names = fit.concat(unfit).map(function(item){ return item.job.n; });
+    if(fit.length !== 3 || unfit.length !== 3 || new Set(names).size !== 6) errors.push(code + "の推薦件数または重複が不正です");
+    if(fit.some(function(item){ return item.job.ok === false || !item.eligible; })) errors.push(code + "に推薦対象外の副業が入りました");
+    if(fit.filter(function(item){ return item.job.cat === "受託"; }).length > 2) errors.push(code + "で受託が3件並びました");
+    const unfitCounts = {};
+    unfit.forEach(function(item){ unfitCounts[item.job.cat] = (unfitCounts[item.job.cat] || 0) + 1; });
+    if(Object.values(unfitCounts).some(function(count){ return count > 2; })) errors.push(code + "の下位候補で同一カテゴリが3件並びました");
   });
+  [-2,0,2].forEach(function(value){
+    const responseValues = new Array(40).fill(value);
+    const first = computeScores(responseValues);
+    const second = computeScores(responseValues);
+    if(typeCode(first) !== typeCode(second)) errors.push("同一回答でタイプ判定が変わりました");
+    if(pickFit(rankJobs(first)).length !== 3) errors.push("全回答" + value + "で推薦を3件選べません");
+  });
+  if(typeCode(computeScores(new Array(40).fill(0))) !== "FBLP") errors.push("全回答中立時の安全側判定が不正です");
+  const noPcValues = new Array(40).fill(0);
+  const pcQuestionIndex = QUESTIONS.findIndex(function(question){ return question.kind === "supplemental" && question.indicator === "digital"; });
+  noPcValues[pcQuestionIndex] = -2;
+  const noPcFit = pickFit(rankJobs(computeScores(noPcValues)));
+  if(noPcFit.some(function(item){ return JOB_PROFILES[item.job.n].f.pc === true; })) errors.push("PCなし回答にPC必須副業が入りました");
+  const lowEmotionValues = new Array(40).fill(0);
+  QUESTIONS.forEach(function(question,index){ if(question.indicator === "emotion") lowEmotionValues[index] = question.rev ? 2 : -2; });
+  const lowEmotionFit = pickFit(rankJobs(computeScores(lowEmotionValues)));
+  if(lowEmotionFit.some(function(item){ return item.job.n === "傾聴・愚痴聞き（非医療）"; })) errors.push("感情耐性が低い回答に傾聴サービスが入りました");
+  const lowVerifyValues = new Array(40).fill(0);
+  const verifyQuestionIndex = QUESTIONS.findIndex(function(question){ return question.indicator === "verify"; });
+  lowVerifyValues[verifyQuestionIndex] = -2;
+  const lowVerifyFit = pickFit(rankJobs(computeScores(lowVerifyValues)));
+  if(lowVerifyFit.some(function(item){ return item.job.n === "AI活用・業務効率化支援"; })) errors.push("検証準備度が低い回答にAI支援が入りました");
   if(errors.length) throw new Error("副業16タイプ診断の検証に失敗しました:\n" + errors.join("\n"));
-  console.info("副業16タイプ診断 self-check passed: 40 questions, 30 jobs, 16 types.");
+  console.info("副業16タイプ診断 self-check passed: 32 axis questions, 8 readiness questions, 30 jobs, 16 types.");
 }
 
 runSelfChecks();
